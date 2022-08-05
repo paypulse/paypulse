@@ -2,7 +2,7 @@
 느그 어무이 뭐하시니 ~
 당당하게 말할 수 있는 그날이 올때까지~!
 
-[![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypuse&show_icons=true&theme=radical)](https://github.com/paypuse/github-readme-stats)
+[![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=radical)](https://github.com/paypuse/github-readme-stats)
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=paypulse&layout=compact)](https://github.com/paypulse/github-readme-stats)
 
