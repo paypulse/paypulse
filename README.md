@@ -1,4 +1,9 @@
-### Hi there 👋
+### 엄마는 개발자 
+느그 어무이 뭐하시니 ~!! 당당하게 말할 수 있는 그날이 올때까지~!
+
+## Language
+<img src="https://img.shields.io/badge/FFCA28?style=flat-square&logo=java&logoColor=white"/>
+
 
 <!--
 **paypulse/paypulse** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
