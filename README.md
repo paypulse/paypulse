@@ -6,10 +6,7 @@
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=paypulse&layout=compact)](https://github.com/paypulse/github-readme-stats)
 
-
-<a href="https://github.com/paypulse/convoychat">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=paypulse&repo=convoychat" />
-</a>
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=paypulse&repo=github-readme-stats)](https://github.com/paypulse/github-readme-stats)
 
 
 <!--
