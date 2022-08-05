@@ -4,6 +4,7 @@
 
 [![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=radical)](https://github.com/paypuse/github-readme-stats)
 
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=paypulse&layout=compact)](https://github.com/paypulse/github-readme-stats)
 
 
 <!--
