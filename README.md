@@ -3,6 +3,7 @@
 당당하게 말할 수 있는 그날이 올때까지~!
 
 [![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse)](https://github.com/paypuse/github-readme-stats)
+![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true&theme=radical)
 
 
 <!--
