@@ -2,8 +2,7 @@
 느그 어무이 뭐하시니 ~
 당당하게 말할 수 있는 그날이 올때까지~!
 
-## Language
-<img src="https://img.shields.io/badge/FFCA28?style=flat-square&logo=java&logoColor=white"/>
+[![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse)](https://github.com/paypuse/github-readme-stats)
 
 
 <!--
