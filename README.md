@@ -1,6 +1,10 @@
 ### ✨ _엄마는 개발자_ ✨
-느그 어무이 뭐하시니 ~
-당당하게 말할 수 있는 그날이 올때까지~!
+이문불여목견(耳聞不如目見) : 백문이 불여 일견
+
+int 노력;
+int 운;
+int 결과 = 노력 * 운;
+
 
 [![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=radical)](https://github.com/paypuse/github-readme-stats)
 
