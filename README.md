@@ -9,7 +9,8 @@ int 결과 = 노력 * 운;
 [![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=radical)](https://github.com/paypuse/github-readme-stats)
 
 
-  <img src="https://img.shields.io/badge/java-61DAFB?style=for-the-badge&logo=React&logoColor=white"/>
+[![Solved.ac Profile](http://mazassumnida.wtf/api/generate_badge?boj=paypulse)](https://solved.ac/paypulse)<br/>
+
 
 
 <!--
