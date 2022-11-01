@@ -8,7 +8,9 @@ int 결과 = 노력 * 운;
 
 [![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=radical)](https://github.com/paypuse/github-readme-stats)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=paypulse)](https://github.com/paypulse/github-readme-stats)
+
+  <img src="https://img.shields.io/badge/java-61DAFB?style=for-the-badge&logo=React&logoColor=white"/>
+
 
 <!--
 **paypulse/paypulse** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
