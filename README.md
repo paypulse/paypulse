@@ -8,9 +8,7 @@ int 결과 = 노력 * 운;
 
 [![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=radical)](https://github.com/paypuse/github-readme-stats)
 
-
-[![Solved.ac Profile](http://mazassumnida.wtf/api/generate_badge?boj=paypulse)](https://solved.ac/paypulse)<br/>
-
+[![Smj's Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=paypulse&layout=compact)](https://github.com/paypulse/github-readme-stats)
 
 
 <!--
