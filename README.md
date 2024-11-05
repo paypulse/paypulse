@@ -5,6 +5,9 @@ int 노력;
 int 운;
 int 결과 = 노력 * 운;
 
+주력 언어 
+java, kotlin 
+
 
 [![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=radical)](https://github.com/paypuse/github-readme-stats)
 
