@@ -8,6 +8,9 @@ int 결과 = 노력 * 운;
 주력 언어 
 java, kotlin 
 
+주력 프레임 워크 
+spring , spring boot, vue.js
+
 
 [![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=radical)](https://github.com/paypuse/github-readme-stats)
 
