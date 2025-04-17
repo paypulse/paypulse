@@ -6,12 +6,14 @@ int 노력;
 int 운;
 int 결과 = 노력 * 운;
 
-주력 언어 
-java, kotlin 
+### 💻 주력 언어
+![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
 
-주력 프레임 워크 
-spring , spring boot, vue.js
-
+### 🔧 주력 프레임워크
+![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
 
 
 ## 코드가 말이 되고, 문법이 철학이 되고, 프로젝트가 아니라 작품이 되어 가는 그 느낌 ##
