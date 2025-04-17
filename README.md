@@ -19,6 +19,11 @@ spring , spring boot, vue.js
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+to+my+space!;I+love+Kotlin,+Spring+and+Notion!&center=true&width=500)](https://git.io/typing-svg)
 
 
+
+## 📫 Contact
+- Email: yourname@email.com
+- Blog: [minjeong.dev](https://minjeong.dev)
+
 <!--
 **paypulse/paypulse** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
