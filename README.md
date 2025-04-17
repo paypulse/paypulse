@@ -1,7 +1,8 @@
 <h3 align="center">
     <img src="https://capsule-render.vercel.app/api?type=waving&color=FF69B4&FFFFE0&height=200&section=header&text=👩‍💻%20엄마는%20개발자&fontSize=40&fontAlign=50&fontColor=ffffff"/>
 </h3>
-## 코드가 말이 되고, 문법이 철학이 되고, 프로젝트가 아니라 작품이 되어 가는 그 느낌 ##
+
+### 코드가 말이 되고, 문법이 철학이 되고, 프로젝트가 아니라 작품이 되어 가는 그 느낌 ###
 
 ### 💻 주력 언어
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
