@@ -9,13 +9,13 @@ int 결과 = 노력 * 운;
 java, kotlin 
 
 주력 프레임 워크 
-<img src="https://img.shields.io/badge/react-20232a.svg?style=for-the-badge&logo=spring&logoColor=61DAFB" />
 spring , spring boot, vue.js
 
 ## 코드가 말이 되고, 문법이 철학이 되고, 프로젝트가 아니라 작품이 되어 가는 그 느낌 ##
 
 
 [![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=radical)](https://github.com/paypuse/github-readme-stats)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=paypuse&layout=compact)
 
 
 <!--
