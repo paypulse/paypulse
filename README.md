@@ -1,6 +1,7 @@
-### ✨ _엄마는 개발자_ ✨
-이문불여목견(耳聞不如目見) : 백문이 불여 일견
+### ✨ _엄마는 개발자_ ✨  
+> 이문불여목견(耳聞不如目見) : 백문이 불여 일견  
 
+```kotlin
 int 노력;
 int 운;
 int 결과 = 노력 * 운;
@@ -18,11 +19,15 @@ spring , spring boot, vue.js
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+to+my+space!;I+love+Kotlin,+Spring+and+Notion!&center=true&width=500)](https://git.io/typing-svg)
 
+## 🔧 Tech Stack
+- 🌱 Kotlin, Spring Boot, QueryDSL
+- 🌐 React (공부 중), Tailwind, Notion API
+- ☁️ AWS, MySQL, Docker
 
 
 ## 📫 Contact
-- Email: yourname@email.com
-- Blog: [minjeong.dev](https://minjeong.dev)
+- Email: smjedu89@gmail.com
+- Blog: [minjeong.dev](https://until.blog/@poppins)
 
 <!--
 **paypulse/paypulse** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
