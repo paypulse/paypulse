@@ -1,5 +1,5 @@
 <h3 align="center">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=FF69B4,FFF8DC&height=200&section=header&text=👩‍💻%20엄마는%20개발자&fontSize=40&fontAlign=50&fontColor=ffffff"/>
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=6F69B4,FFF8DC&height=200&section=header&text=👩‍💻%20엄마는%20개발자&fontSize=40&fontAlign=50&fontColor=ffffff"/>
 </h3>
 > 이문불여목견(耳聞不如目見) : 백문이 불여 일견  
 
