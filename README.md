@@ -19,6 +19,8 @@
 - 🌐 React (공부 중), Tailwind, Notion API
 - ☁️ AWS, MySQL, Docker
 
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=paypulse&count_private=true)
+
 
 ## 📫 Contact
 - Email: smjedu89@gmail.com
