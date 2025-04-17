@@ -10,14 +10,11 @@ java, kotlin
 
 주력 프레임 워크 
 spring , spring boot, vue.js
-[![Minjeong's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
+
 
 
 ## 코드가 말이 되고, 문법이 철학이 되고, 프로젝트가 아니라 작품이 되어 가는 그 느낌 ##
-
-
-[![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=radical)](https://github.com/paypuse/github-readme-stats)
-
+[![Minjeong's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--
 **paypulse/paypulse** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
