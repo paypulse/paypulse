@@ -20,7 +20,7 @@ int 결과 = 노력 * 운;
 ## 코드가 말이 되고, 문법이 철학이 되고, 프로젝트가 아니라 작품이 되어 가는 그 느낌 ##
 [![Minjeong's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+to+my+space!;I+love+Kotlin,+Spring+and+Notion!&center=true&width=500)](https://git.io/typing-svg)
+
 
 ## 🔧 Tech Stack
 - 🌱 Kotlin, Spring Boot, QueryDSL
