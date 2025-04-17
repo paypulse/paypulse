@@ -11,6 +11,8 @@ java, kotlin
 주력 프레임 워크 
 spring , spring boot, vue.js
 
+## 코드가 말이 되고, 문법이 철학이 되고, 프로젝트가 아니라 작품이 되어 가는 그 느낌 ##
+
 
 [![Smj's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=radical)](https://github.com/paypuse/github-readme-stats)
 
