@@ -3,6 +3,7 @@
 </h3>
 
 ### 코드가 말이 되고, 문법이 철학이 되고, 프로젝트가 아니라 작품이 되어 가는 그 느낌 ###
+[![Minjeong's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
 
 ### 💻 주력 언어
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
@@ -13,11 +14,6 @@
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
 
-
-[![Minjeong's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
-
-
-
 ## 🔧 Tech Stack
 - 🌱 Kotlin, Spring Boot, QueryDSL
 - 🌐 React (공부 중), Tailwind, Notion API
@@ -26,7 +22,8 @@
 
 ## 📫 Contact
 - Email: smjedu89@gmail.com
-- Blog: [minjeong.dev](https://until.blog/@poppins)
+- Blog: [util_blog](https://until.blog/@poppins)
+        [git_blog](https://paypulse.github.io/)     
 
 <!--
 **paypulse/paypulse** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
