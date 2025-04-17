@@ -1,10 +1,11 @@
 ### ✨ _엄마는 개발자_ ✨  
 > 이문불여목견(耳聞不如目見) : 백문이 불여 일견  
 
-```kotlin
+```
 int 노력;
 int 운;
 int 결과 = 노력 * 운;
+```
 
 ### 💻 주력 언어
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
