@@ -1,3 +1,7 @@
+<h3 align="center">✨ _엄마는 개발자_ ✨  </h3>
+<p align="center">
+  <img src="https://github.com/sowon-dev/sowon-dev/assets/your_image.gif" width="300"/>
+</p>
 ### ✨ _엄마는 개발자_ ✨  
 > 이문불여목견(耳聞不如目見) : 백문이 불여 일견  
 
