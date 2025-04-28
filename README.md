@@ -3,7 +3,6 @@
 </h3>
 
 ### 코드가 말이 되고, 문법이 철학이 되고, 프로젝트가 아니라 작품이 되어 가는 그 느낌 ###
-[3D 잔디 모델 보기](https://sketchfab.com/3d-models/your-3d-grass-model-url)
 [![Minjeong's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
 
 ### 💻 주력 언어
