@@ -5,7 +5,7 @@
 ### 코드가 말이 되고, 문법이 철학이 되고, 프로젝트가 아니라 작품이 되어 가는 그 느낌 ###
 [![Minjeong's GitHub stats](https://github-readme-stats.vercel.app/api?username=paypulse&show_icons=true&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
 ## 🌳 나의 3D Git 정원
-[여기서 내 3D Git 정원 보기](https://your-username.github.io/git-garden/)
+[여기서 내 3D Git 정원 보기]([https://your-username.github.io/git-garden/](https://paypulse.github.io/git-garden/))
 
 ### 💻 주력 언어
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
