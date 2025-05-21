@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Contributions 3D Interactive - Enhanced</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #1a1a1a; /* Slightly lighter dark */ }
+        #container { width: 100vw; height: 100vh; display: block; }
+        #tooltip {
+            position: absolute;
+            display: none;
+            background-color: rgba(245, 245, 245, 0.95); /* Slightly off-white */
+            border: 1px solid #aaa;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+            font-size: 13px;
+            color: #222;
+            pointer-events: none;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+        }
+    </style>
+</head>
+<body>
+    <div id="tooltip"></div>
+    <div id="container"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="paypulse_contributions.js"></script> <!-- Load contributions data -->
+    <script>
+        // --- Constants ---
+        const CUBE_SIZE = 1.0;
+        const CUBE_SPACING = 0.3;
+        const DAYS_IN_WEEK = 7;
+        const WEEKS_IN_YEAR = 53; // Standard GitHub contribution graph width
+
+        const HIGHLIGHT_COLOR = 0xffdc73; // Softer yellow for highlighting
+        const SCENE_BACKGROUND_COLOR = 0x282c34; // Darker, slightly bluish background
+        const FOG_COLOR = SCENE_BACKGROUND_COLOR;
+        const FOG_NEAR_FACTOR = 2.5; // Fog starts further out based on grid size
+        const FOG_FAR_FACTOR = 4.5;  // Fog ends further out
+
+        // --- Global Three.js Variables ---
+        let scene, camera, renderer, controls;
+        let raycaster, mouse;
+        let contributionCubesGroup;
+        let intersectedCube = null;
+        let tooltipElement;
+
+        // --- Helper Functions ---
+        function mapCountToColor(count) {
+            if (count === 0) return 0x383838; // Darker grey for no contributions
+            if (count >= 1 && count <= 2) return 0x0e4429;
+            if (count >= 3 && count <= 5) return 0x006d32;
+            if (count >= 6 && count <= 9) return 0x26a641;
+            return 0x39d353; // GitHub's brightest green
+        }
+        
+        function mapCountToHeight(count) {
+            if (count === 0) return 0.1; // Minimal height for zero contributions
+            // Logarithmic scale, slightly adjusted for more visual impact
+            const height = 0.3 + Math.log1p(count) * 1.2; 
+            return Math.min(height, 20); // Increased max height cap
+        }
+
+        // --- Initialization ---
+        function init() {
+            tooltipElement = document.getElementById('tooltip');
+            
+            // Scene setup
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(SCENE_BACKGROUND_COLOR);
+            const gridWidth = WEEKS_IN_YEAR * (CUBE_SIZE + CUBE_SPACING);
+            const gridDepth = DAYS_IN_WEEK * (CUBE_SIZE + CUBE_SPACING);
+            scene.fog = new THREE.Fog(FOG_COLOR, Math.max(gridWidth, gridDepth) * FOG_NEAR_FACTOR, Math.max(gridWidth, gridDepth) * FOG_FAR_FACTOR);
+
+            contributionCubesGroup = new THREE.Group();
+            scene.add(contributionCubesGroup);
+
+            // Camera setup
+            camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 3000); // Adjusted FOV
+            // Initial camera position will be refined after graph generation
+
+            // Lighting setup
+            // HemisphereLight for soft ambient light from sky and ground
+            const hemisphereLight = new THREE.HemisphereLight(0x7f8c8d, 0x34495e, 0.8); // Sky color, ground color, intensity
+            scene.add(hemisphereLight);
+
+            // Ambient light for overall base illumination
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4); // Reduced intensity as Hemisphere is present
+            scene.add(ambientLight);
+
+            // Directional light for shadows and highlights
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.9); // Slightly increased intensity
+            directionalLight.position.set(gridWidth * 0.6, 80, gridDepth * 1.5); // Position relative to grid
+            directionalLight.castShadow = true;
+            directionalLight.shadow.mapSize.width = 4096; // Increased shadow map resolution
+            directionalLight.shadow.mapSize.height = 4096;
+            directionalLight.shadow.camera.near = 10;
+            directionalLight.shadow.camera.far = 200;
+            // Adjust shadow camera frustum to tightly contain the grid for better shadow quality
+            directionalLight.shadow.camera.left = -gridWidth / 1.8;
+            directionalLight.shadow.camera.right = gridWidth / 1.8;
+            directionalLight.shadow.camera.top = gridDepth / 1.5;
+            directionalLight.shadow.camera.bottom = -gridDepth / 1.5;
+            directionalLight.shadow.bias = -0.0005; // Helps with shadow acne
+            scene.add(directionalLight);
+            // const shadowHelper = new THREE.CameraHelper(directionalLight.shadow.camera); // For debugging shadows
+            // scene.add(shadowHelper);
+            
+            // Ground plane
+            const planeGeometry = new THREE.PlaneGeometry(gridWidth * 1.5, gridDepth * 3); // Larger plane
+            const planeMaterial = new THREE.MeshStandardMaterial({ color: 0x202020, roughness: 0.9, metalness: 0.1 });
+            const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+            plane.rotation.x = -Math.PI / 2;
+            plane.position.y = -0.2; // Ensure it's below cubes, even those with 0.1 height
+            plane.receiveShadow = true;
+            scene.add(plane);
+
+            // Renderer setup
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio); // For sharper images on high DPI displays
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Softer shadows
+            renderer.toneMapping = THREE.ACESFilmicToneMapping; // Better color grading
+            renderer.toneMappingExposure = 1.0;
+            renderer.outputColorSpace = THREE.SRGBColorSpace; // Correct color space (for Three.js r128+, use outputEncoding for older)
+
+            document.getElementById('container').appendChild(renderer.domElement);
+
+            // OrbitControls setup
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.04; // Smoother damping
+            controls.screenSpacePanning = false;
+            controls.minDistance = 10;     // Prevent zooming too close
+            controls.maxDistance = 200;    // Prevent zooming too far
+            controls.minPolarAngle = Math.PI / 6; // Prevent looking from below ground (30 degrees)
+            controls.maxPolarAngle = Math.PI / 2.2; // Prevent looking directly from top (approx 81 degrees)
+            // Target will be set after graph generation
+
+            // Raycasting setup
+            raycaster = new THREE.Raycaster();
+            mouse = new THREE.Vector2();
+
+            // Generate the 3D graph
+            generateContributionGraph();
+
+            // Event listeners
+            window.addEventListener('resize', onWindowResize, false);
+            window.addEventListener('mousemove', onMouseMove, false);
+            
+            // Start animation loop
+            animate();
+        }
+
+        function generateContributionGraph() {
+            if (typeof contributions === 'undefined' || contributions.length === 0) {
+                console.error("Contributions data is not loaded or is empty.");
+                return;
+            }
+
+            const sortedContributions = [...contributions].map(c => ({...c, dateObj: new Date(c.date)})).sort((a, b) => a.dateObj - b.dateObj);
+            if (sortedContributions.length === 0) return;
+
+            const firstDate = sortedContributions[0].dateObj;
+            const startDateOfGrid = new Date(firstDate);
+            startDateOfGrid.setDate(firstDate.getDate() - firstDate.getDay()); // Set to Sunday of the first week
+
+            sortedContributions.forEach(contrib => {
+                const date = contrib.dateObj;
+                const count = contrib.count;
+                const dayOfWeek = date.getDay(); // 0 (Sunday) to 6 (Saturday)
+                
+                const timeDiff = date.getTime() - startDateOfGrid.getTime();
+                const dayDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
+                const weekIndex = Math.floor(dayDiff / 7);
+
+                if (weekIndex < 0 || weekIndex >= WEEKS_IN_YEAR) return; // Skip dates outside the 53-week window
+
+                const x_position = weekIndex * (CUBE_SIZE + CUBE_SPACING);
+                const z_position = dayOfWeek * (CUBE_SIZE + CUBE_SPACING);
+                const cubeHeight = mapCountToHeight(count);
+                const y_position = cubeHeight / 2;
+
+                const geometry = new THREE.BoxGeometry(CUBE_SIZE, cubeHeight, CUBE_SIZE);
+                const originalColor = mapCountToColor(count);
+                const material = new THREE.MeshStandardMaterial({ 
+                    color: originalColor,
+                    roughness: 0.75, // Adjusted roughness
+                    metalness: 0.05  // Adjusted metalness
+                });
+                const cube = new THREE.Mesh(geometry, material);
+                cube.position.set(x_position, y_position, z_position);
+                cube.castShadow = true;
+                cube.receiveShadow = true;
+                cube.userData = { 
+                    date: date.toISOString().split('T')[0],
+                    count: count,
+                    originalColor: new THREE.Color(originalColor),
+                    isContributionCube: true
+                };
+                contributionCubesGroup.add(cube);
+            });
+            
+            // --- Final Camera and Controls Target Adjustment ---
+            const gridWidth = WEEKS_IN_YEAR * (CUBE_SIZE + CUBE_SPACING);
+            const gridDepth = DAYS_IN_WEEK * (CUBE_SIZE + CUBE_SPACING);
+            
+            // Center of the grid on XZ plane
+            const centerX = (WEEKS_IN_YEAR -1) * (CUBE_SIZE + CUBE_SPACING) / 2;
+            const centerZ = (DAYS_IN_WEEK -1) * (CUBE_SIZE + CUBE_SPACING) / 2;
+
+            camera.position.set(centerX, Math.max(gridWidth, gridDepth) * 0.6, centerZ + gridDepth * 2.5); // Position relative to center
+            controls.target.set(centerX, 0, centerZ); // Look at the center of the grid
+            controls.update();
+        }
+
+        // --- Event Handlers ---
+        function onMouseMove(event) {
+            event.preventDefault();
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(contributionCubesGroup.children, false); // Non-recursive
+
+            if (intersects.length > 0) {
+                const firstIntersected = intersects[0].object;
+                if (firstIntersected.userData.isContributionCube) {
+                    if (intersectedCube !== firstIntersected) {
+                        if (intersectedCube) {
+                            intersectedCube.material.color.set(intersectedCube.userData.originalColor);
+                        }
+                        intersectedCube = firstIntersected;
+                        intersectedCube.material.color.set(HIGHLIGHT_COLOR);
+                        tooltipElement.style.display = 'block';
+                        tooltipElement.innerHTML = `Date: ${intersectedCube.userData.date}<br>Contributions: ${intersectedCube.userData.count}`;
+                    }
+                    tooltipElement.style.left = (event.clientX + 10) + 'px'; // Adjusted offset
+                    tooltipElement.style.top = (event.clientY - 25) + 'px'; // Adjusted offset
+                } else {
+                    hideTooltipAndResetCube();
+                }
+            } else {
+                hideTooltipAndResetCube();
+            }
+        }
+        
+        function hideTooltipAndResetCube() {
+            if (intersectedCube) {
+                intersectedCube.material.color.set(intersectedCube.userData.originalColor);
+                intersectedCube = null;
+            }
+            tooltipElement.style.display = 'none';
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // --- Animation Loop ---
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update(); // Only if enableDamping or autoRotate is true
+            renderer.render(scene, camera);
+        }
+
+        // --- Start ---
+        init();
+    </script>
+</body>
+</html>
