@@ -1,5 +1,6 @@
 <h3 align="center">
     <img src="https://capsule-render.vercel.app/api?type=waving&color=FF69B4&FFFFE0&height=200&section=header&text=👩‍💻%20엄마는%20개발자&fontSize=40&fontAlign=50&fontColor=ffffff"/>
+      <img src="https://render.gitanimals.org/lines/{paypulse}?pet-id=713553446951056479" width="1000" height="120"/> 
 </h3>
 
 ### 코드가 말이 되고, 문법이 철학이 되고, 프로젝트가 아니라 작품이 되어 가는 그 느낌 ###
@@ -8,7 +9,6 @@
 [Git Garden 페이지 보기](https://paypulse.github.io/git-garden/)
 
 <a href="https://github.com/devxb/gitanimals">
-  <img src="https://render.gitanimals.org/lines/{paypulse}?pet-id=713553446951056479" width="1000" height="120"/> 
   <img src="https://render.gitanimals.org/farms/{paypulse}"/>
 </a>
 
