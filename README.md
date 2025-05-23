@@ -8,7 +8,7 @@
 [Git Garden 페이지 보기](https://paypulse.github.io/git-garden/)
 
 <a href="https://github.com/devxb/gitanimals">
-  <img src="https://render.gitanimals.org/lines/{paypulse}?pet-id=2" width="1000" height="120"/>
+  <img src="https://render.gitanimals.org/lines/{paypulse}?pet-id=10" width="1000" height="120"/>
 </a>
 
 ### 💻 주력 언어
