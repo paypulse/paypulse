@@ -9,7 +9,9 @@
 
 <a href="https://github.com/devxb/gitanimals">
   <img src="https://render.gitanimals.org/lines/{paypulse}?pet-id=10" width="1000" height="120"/>
+  <img src="https://render.gitanimals.org/farms/{paypulse}"/>
 </a>
+
 
 ### 💻 주력 언어
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
